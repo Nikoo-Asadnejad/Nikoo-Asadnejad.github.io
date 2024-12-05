@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import COLORS from '../colors';
 
 function Skills() {
   const skills = [
@@ -20,20 +22,69 @@ function Skills() {
     { name: 'JavaScript', src: 'https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg' }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <section id="skills" style={{ padding: '50px', background: '#f8f9fa', textAlign: 'center' }}>
-      <h2>Skills</h2>
-      <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+    <motion.section
+      id="skills"
+      style={{
+        padding: '50px',
+        background: COLORS.lightTeal,
+        textAlign: 'center',
+        color: COLORS.darkestTeal
+      }}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <h2 style={{ color: COLORS.teal }}>Skills</h2>
+      <motion.ul
+        style={{
+          listStyleType: 'none',
+          padding: 0,
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          margin: 0
+        }}
+        variants={containerVariants}
+      >
         {skills.map(skill => (
-          <li
+          <motion.li
             key={skill.name}
+            variants={itemVariants}
+            whileHover={{
+              scale: 1.2,
+              rotate: 5,
+              boxShadow: `0px 4px 10px ${COLORS.mediumTeal}`
+            }}
             style={{
               margin: '15px',
               textAlign: 'center',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              width: '80px'
+              width: '80px',
+              border: `2px solid ${COLORS.mediumTeal}`,
+              borderRadius: '10px',
+              padding: '10px',
+              backgroundColor: COLORS.darkTeal,
+              color: '#fff'
             }}
           >
             <img
@@ -43,10 +94,10 @@ function Skills() {
               style={{ width: '40px', height: '40px', marginBottom: '10px' }}
             />
             <span>{skill.name}</span>
-          </li>
+          </motion.li>
         ))}
-      </ul>
-    </section>
+      </motion.ul>
+    </motion.section>
   );
 }
 
