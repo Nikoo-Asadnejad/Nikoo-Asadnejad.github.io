@@ -1,0 +1,7 @@
+.DS_Store
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/npm-debug.log*
+frontend/*.tsbuildinfo
+frontend/.env.local
