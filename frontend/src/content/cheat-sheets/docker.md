@@ -1,0 +1,223 @@
+# Docker Command Cheat Sheet
+
+This cheat sheet provides a quick reference for common Docker commands.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Images](#images)
+- [Containers](#containers)
+- [Networking](#networking)
+- [Volumes](#volumes)
+- [Inspection & Formatting](#inspection--formatting)
+- [Resource Monitoring](#resource-monitoring)
+- [Security](#security)
+- [Context & Remote Hosts](#context--remote-hosts)
+- [Buildx & Multi-Platform](#buildx--multi-platform)
+- [Registry & Login](#registry--login)
+- [Docker Compose](#docker-compose)
+- [Docker Swarm](#docker-swarm)
+
+## Getting Started
+
+| Command                                      | Description                                         |
+|----------------------------------------------|-----------------------------------------------------|
+| `docker --version`                           | Display the installed Docker version                |
+| `docker info`                                | Display system-wide information about Docker        |
+| `docker help`                                | Display help for Docker commands                    |
+
+---
+
+## Images
+
+| Command                                      | Description                                         |
+|----------------------------------------------|-----------------------------------------------------|
+| `docker pull <image>`                        | Pull an image from Docker Hub                       |
+| `docker images`                              | List all available images                           |
+| `docker rmi <image>`                         | Remove an image                                     |
+| `docker build -t <image-name>:<tag> <path>`| Build an image from a Dockerfile                    |
+| `docker tag <source-image> <target-image>`  | Tag an image with a new name                       |
+| `docker search <term>`                       | Search for images on Docker Hub                     |
+| `docker history <image>` | Show image layer history |
+| `docker save -o file.tar <image>` | Save image to tar archive |
+| `docker load -i file.tar` | Load image from tar archive |
+| `docker image inspect <image>` | Detailed image info |
+| `docker image prune -a` | Remove unused images |
+---
+
+## Containers
+
+| Command                                      | Description                                         |
+|----------------------------------------------|-----------------------------------------------------|
+| `docker run <image>`                         | Run a command in a new container                    |
+| `docker run -d <image>`                      | Run a container in detached mode                    |
+| `docker run -d  --name <name> -p <Serverport>:<containerport> <image>`                      | Run a container in detached mode give it specific name and map the port of the container                   |
+| `docker run -tid --name <name> --memory 60mb -p 5050:80`                 | Run a container and specify memory for it    |
+| `docker run -tid <image> sh`                 | Open shell of the container in current terminal     |
+| `docker ps` or `docker container ls`         | List running containers                             |
+| `docker ps -a` or `docker container ls -a`   | List all containers, including stopped ones         |
+| `docker stop <container>`                    | Stop a running container                            |
+| `docker stop -60 <container>`                | Stop a running container in 60 sec                  |
+| `docker container kill <container>`          | Kill a running container                            |
+| `docker start <container>`                   | Start a stopped container                           |
+| `docker restart <container>`                 | Restart a container                                 |
+| `docker rm <container>`                      | Remove a stopped container                          |
+| `docker rm <container> --force`              | Remove a stopped container forcably                 |
+| `docker exec -it <container> <command>`      | Execute a command inside a running container        |
+| `docker logs <container>`                    | Fetch the logs of a container                       |
+| `docker attach <container>` | Attach terminal to running container |
+| `docker pause <container>` | Pause all processes |
+| `docker unpause <container>` | Resume paused container |
+| `docker rename <old> <new>` | Rename container |
+| `docker update --memory 200m <container>` | Update container resources |
+| `docker wait <container>` | Wait until container stops |
+---
+
+## Networking
+
+
+| Command                                      | Description                                         |
+|----------------------------------------------|-----------------------------------------------------|
+| `docker network ls`                          | List all existing Docker networks. Displays details such as network name, ID, driver type, and scope. |
+| `docker network create <network-name>`      | Create a new user-defined network with the specified name. By default, it uses the `bridge` driver. |
+| `docker network create --driver <driver-name> <network-name>` | Create a network using a specific driver (e.g., `bridge`, `overlay`, `host`, or `none`). |
+| `docker network rm <network-name>`          | Remove a Docker network. The network must not be in use by any containers. |
+| `docker network inspect <network-name>`     | Display detailed information about a network, including connected containers, IP ranges, and driver type. |
+| `docker run --network <network-name> <image>`| Start a container and connect it to a specific network at runtime. |
+| `docker network connect <network-name> <container-id>` | Connect an existing container to a specified network. |
+| `docker network disconnect <network-name> <container-id>` | Disconnect a container from a specific network. |
+| `docker network prune`                      | Remove all unused Docker networks. Be cautious as it deletes networks not being used by containers. |
+| `docker-compose up`                         | Automatically creates and manages a network for the services defined in the `docker-compose.yml` file. |
+| `docker network create --subnet=<CIDR> <network-name>` | Create a network with a custom subnet (CIDR notation). |
+| `docker network create --gateway=<IP> <network-name>` | Create a network with a custom gateway IP address. |
+| `docker network create -o com.docker.network.bridge.name=<bridge-name> <network-name>` | Create a `bridge` network with a specific bridge name. |
+
+## Inspection & Formatting
+
+| Command | Description |
+|--------|-------------|
+| `docker inspect <object>` | Low-level details (JSON) |
+| `docker inspect -f '{{.State.Status}}' <container>` | Format output |
+| `docker ps --format "table {{.Names}}\t{{.Status}}"` | Custom table output |
+
+---
+
+## Volumes
+
+| Command                                      | Description                                         |
+|----------------------------------------------|-----------------------------------------------------|
+| `docker volume ls`                           | List all volumes                                    |
+| `docker volume create <volume-name>`        | Create a new volume                                 |
+| `docker volume rm <volume-name>`            | Remove a volume                                     |
+| `docker run -v <volume-name>:<container-path> <image>`| Mount a volume into a container             |
+| `docker volume create --driver local --opt type=nfs  --opt o=addr=<NFS_SERVER_IP>,rw --opt device=:/export/shared  my-nfs-volume` | Create centrlized nfs sharing volume |
+
+---
+
+## Resource Monitoring
+
+| Command | Description |
+|--------|-------------|
+| `docker stats` | Live resource usage of containers |
+| `docker top <container>` | Running processes in container |
+| `docker events` | Real-time Docker events |
+
+---
+
+## Security
+
+| Command | Description |
+|--------|-------------|
+| `docker scan <image>` | Scan image for vulnerabilities |
+| `docker trust inspect <image>` | Verify image signatures |
+
+---
+
+## Registry & Login
+
+| Command | Description |
+|--------|-------------|
+| `docker login` | Login to registry |
+| `docker logout` | Logout |
+| `docker push <image>` | Push image to registry |
+| `docker pull <image>` | Pull image |
+
+---
+
+## Context & Remote Hosts
+
+| Command | Description |
+|--------|-------------|
+| `docker context ls` | List contexts |
+| `docker context create <name>` | Create new context |
+| `docker context use <name>` | Switch context |
+
+---
+
+## Buildx & Multi-Platform
+
+| Command | Description |
+|--------|-------------|
+| `docker buildx ls` | List builders |
+| `docker buildx create` | Create builder |
+| `docker buildx build --platform linux/amd64,linux/arm64 .` | Multi-arch build |
+| `docker buildx bake` | Build from config |
+
+---
+
+## Docker Compose
+
+| Command                                      | Description                                         |
+|----------------------------------------------|-----------------------------------------------------|
+| `docker-compose up`                          | Start all services defined in a `docker-compose.yml` file. Creates and starts containers as needed. |
+| `docker-compose up -d`                       | Start services in detached mode (running in the background). |
+| `docker-compose down`                        | Stop and remove containers, networks, volumes, and images created by `docker-compose up`. |
+| `docker-compose down -v`                     | Stop and remove services along with their associated volumes. |
+| `docker-compose ps`                          | List the status of containers for the services defined in the `docker-compose.yml` file. |
+| `docker-compose logs`                        | View logs for all running services. By default, it displays real-time logs. |
+| `docker-compose logs -f`                     | Follow logs in real-time for services defined in the `docker-compose.yml` file. |
+| `docker-compose build`                       | Build or rebuild images for services defined in the `docker-compose.yml` file. |
+| `docker-compose build --no-cache`            | Build services without using the cache. Forces a fresh build. |
+| `docker-compose pull`                        | Pull the latest images for all services defined in the `docker-compose.yml` file. |
+| `docker-compose start`                       | Start containers for services that were stopped but not removed. |
+| `docker-compose stop`                        | Stop running containers without removing them. They can be restarted later using `docker-compose start`. |
+| `docker-compose restart`                     | Restart running containers for services defined in the `docker-compose.yml` file. |
+| `docker-compose exec <service-name> <command>` | Execute a command inside a running service container. |
+| `docker-compose run <service-name> <command>` | Run a one-off command in a new container for a service. |
+| `docker-compose config`                      | Validate and view the configuration of the `docker-compose.yml` file. |
+| `docker-compose config --services`           | List all services defined in the `docker-compose.yml` file. |
+| `docker-compose config --volumes`            | List all volumes defined in the `docker-compose.yml` file. |
+| `docker-compose kill`                        | Forcefully stop running containers for all services. |
+| `docker-compose rm`                          | Remove stopped service containers. Prompts for confirmation by default. |
+| `docker-compose rm -f`                       | Remove stopped service containers without confirmation. |
+| `docker-compose version`                     | Display the installed version of Docker Compose. |
+
+---
+
+## Docker Swarm
+
+| Command                                      | Description                                         |
+|----------------------------------------------|-----------------------------------------------------|
+| `docker swarm init`                          | Initialize a new Swarm and make the current node the Swarm manager. |
+| `docker swarm join --token <token> <manager-ip>:<port>` | Join a Swarm as a worker node using the provided token and manager IP. |
+| `docker swarm join-token manager`           | Display the join token command to add another manager node. |
+| `docker swarm join-token worker`            | Display the join token command to add a worker node. |
+| `docker swarm leave`                        | Leave the Swarm. Use `--force` if the node is a manager. |
+| `docker service create --name <service-name> <image>` | Create a new service in the Swarm using the specified image. |
+| `docker service update <service-name> --image <new-image>` | Update an existing service to use a new image. |
+| `docker service ls`                          | List all services running in the Swarm. |
+| `docker service ps <service-name>`           | List all tasks (containers) of a specific service. |
+| `docker service logs <service-name>`         | View logs for a specific service. |
+| `docker service rm <service-name>`           | Remove a service from the Swarm. |
+| `docker service scale <service-name>=<replica-count>` | Scale a service to the specified number of replicas. |
+| `docker node ls`                             | List all nodes in the Swarm, showing their roles, availability, and status. |
+| `docker node ps <node-id>`                   | List tasks running on a specific node. |
+| `docker node rm <node-id>`                   | Remove a node from the Swarm. The node must leave the Swarm first. |
+| `docker node update --availability <active|pause|drain> <node-id>` | Change the availability state of a node. |
+| `docker stack deploy -c <compose-file.yml> <stack-name>` | Deploy a stack using a Docker Compose file. |
+| `docker stack ls`                            | List all deployed stacks in the Swarm. |
+| `docker stack ps <stack-name>`               | List all tasks in a stack. |
+| `docker stack rm <stack-name>`               | Remove a deployed stack. |
+| `docker inspect <object>`                    | Inspect the details of any Docker object (node, service, task, etc.). |
+| `docker events`                              | Display real-time events from the Swarm. |
+| `docker swarm update --task-history-limit <value>` | Update Swarm settings, such as task history limit. |

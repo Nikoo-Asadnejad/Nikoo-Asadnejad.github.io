@@ -11,6 +11,7 @@ export function Footer() {
         </div>
         <div className="footer-links" aria-label="Footer navigation">
           <Link href="/projects/">Projects</Link>
+          <Link href="/cheat-sheets/">Cheat Sheets</Link>
           <Link href="/articles/">Articles</Link>
           <Link href="/resume/">Resume</Link>
           <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
