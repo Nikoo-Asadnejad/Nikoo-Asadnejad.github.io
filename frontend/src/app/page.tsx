@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiDownload, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { SiMedium } from "react-icons/si";
+import { ArticleCard } from "@/components/ArticleCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { TechnologyGrid } from "@/components/TechnologyGrid";
+import { articles } from "@/content/articles";
 import { profile, projects } from "@/content/portfolio";
 
 export default function HomePage() {
@@ -66,6 +68,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section section-surface" aria-labelledby="featured-articles-title">
+        <div className="container">
+          <div className="section-heading split-heading">
+            <div><p className="eyebrow">Featured writing</p><h2 id="featured-articles-title">Ideas for building better systems</h2></div>
+            <Link className="text-link" href="/articles/">View all articles <FiArrowRight aria-hidden="true" /></Link>
+          </div>
+          <div className="article-grid featured-article-grid">
+            {articles.filter((article) => article.featured).map((article) => <ArticleCard article={article} key={article.url} />)}
+          </div>
+        </div>
+      </section>
+
       <section className="section callout-section">
         <div className="container callout">
           <div><p className="eyebrow">Let&apos;s work together</p><h2>Building something ambitious?</h2><p>I&apos;m interested in engineering challenges where architecture, reliability, and product thinking matter.</p></div>
@@ -75,4 +89,3 @@ export default function HomePage() {
     </>
   );
 }
-

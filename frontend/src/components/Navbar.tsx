@@ -9,6 +9,7 @@ import { profile } from "@/content/portfolio";
 const links = [
   { href: "/", label: "Home" },
   { href: "/projects/", label: "Projects" },
+  { href: "/articles/", label: "Articles" },
   { href: "/resume/", label: "Resume" },
   { href: "/contact/", label: "Contact" },
 ];
