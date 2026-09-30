@@ -41,7 +41,7 @@ export default function HomePage() {
               <strong>architecture · delivery</strong>
               <em>reliability · impact</em>
             </div>
-            <div className="experience-card"><strong>5 years</strong><span>software engineering</span></div>
+            <div className="experience-card"><strong>+5 years</strong><span>software engineering</span></div>
           </div>
         </div>
       </section>

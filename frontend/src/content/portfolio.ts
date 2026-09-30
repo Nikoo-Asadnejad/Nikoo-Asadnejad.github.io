@@ -88,7 +88,7 @@ export const projects: Project[] = [
       "A collection of practical Linux scripts for system maintenance, monitoring, automation, service checks, backups, and operational alerts.",
     technologies: ["Bash", "Linux", "Automation"],
     repositoryUrl: "https://github.com/Nikoo-Asadnejad/Practical_BashScripts",
-    featured: false,
+    featured: true,
   },
   {
     slug: "code-reviewer",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
       "A lightweight, extensible C# library that adds health checks, metrics, tracing, and logging to .NET applications with minimal setup.",
     technologies: ["C#", ".NET", "OpenTelemetry", "Observability"],
     repositoryUrl: "https://github.com/Nikoo-Asadnejad/Observability",
-    featured: false,
+    featured: true,
   },
   {
     slug: "manufacturing-system",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
       "A .NET 10 worker that models a manufacturing workflow driven by temperature and pressure measurements. It captures immutable sensor snapshots, evaluates workflow rules, and coordinates shared machine resources across eligible stages.",
     technologies: ["C#", ".NET 10", "Concurrency", "Dataflow"],
     repositoryUrl: "https://github.com/Nikoo-Asadnejad/ManufacturingSystem",
-    featured: false,
+    featured: true,
   },
   {
     slug: "graceful-shutdown",
@@ -142,6 +142,42 @@ export const projects: Project[] = [
       "A practical reference for common Linux commands covering system navigation, files and permissions, process and service management, networking, SSH, package management, scheduling, and system monitoring.",
     technologies: ["Linux", "Shell", "System Administration", "LPIC"],
     repositoryUrl: "https://github.com/Nikoo-Asadnejad/Linux-Commands-Cheat-Sheet",
+    featured: false,
+  },
+  {
+    slug: "design-patterns",
+    title: "DesignPatterns",
+    description:
+      "A practical C# guide to commonly used creational, structural, and behavioral design patterns, with explanations and examples that demonstrate their real-world application.",
+    technologies: ["C#", ".NET", "Design Patterns", "OOP"],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/DesignPatterns",
+    featured: false,
+  },
+  {
+    slug: "in-memory-event-broadcaster",
+    title: "InMemoryEventBroadcaster",
+    description:
+      "A bounded, in-process .NET 10 event distribution library that uses channels and TPL Dataflow to provide non-blocking publishing and isolated subscriber buffers.",
+    technologies: ["C#", ".NET 10", "Channels", "TPL Dataflow"],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/InMemoryEventBroadcaster",
+    featured: false,
+  },
+  {
+    slug: "python-scripts",
+    title: "Python Scripts",
+    description:
+      "A collection of focused, self-contained Python scripts for improving daily productivity and automating routine tasks.",
+    technologies: ["Python", "Scripting", "Automation"],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/python_scripts",
+    featured: false,
+  },
+  {
+    slug: "linux-nfs-file-sharing",
+    title: "Linux NFS File Sharing",
+    description:
+      "A practical guide to configuring NFS server and client file sharing on Linux, including exports, permissions, firewall rules, service management, mounting, and verification.",
+    technologies: ["Linux", "NFS", "Shell", "System Administration"],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/Linux-NFS-FileSharing",
     featured: false,
   },
 ];
