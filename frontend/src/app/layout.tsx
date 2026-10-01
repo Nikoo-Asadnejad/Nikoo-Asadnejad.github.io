@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   publisher: profile.name,
   icons: { icon: "/favicon.svg" },
   alternates: { canonical: absoluteUrl("/") },
+  verification: { google: "PkcQPOiUeQGno3Kruto9m23YQtLQf9RMAEOC4y066oM" },
   openGraph: {
     type: "website",
     locale: "en_US",
