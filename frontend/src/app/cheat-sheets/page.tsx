@@ -3,13 +3,12 @@ import Link from "next/link";
 import { FiArrowRight, FiArrowUpRight, FiBookOpen, FiTerminal } from "react-icons/fi";
 import { SiDocker, SiGit, SiKubernetes, SiLinux } from "react-icons/si";
 import { getCheatSheets } from "@/content/cheatSheets";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Developer Cheat Sheets",
-  description: "Readable Linux, Git, Kubernetes, and Docker command references by Nikoo Asadnejad.",
-  alternates: siteUrl ? { canonical: `${siteUrl}/cheat-sheets/` } : undefined,
+  description: "Readable Linux, Git, Kubernetes, and Docker command references by software engineer Nikoo Asadnejad.",
+  alternates: { canonical: absoluteUrl("/cheat-sheets/") },
 };
 
 const icons = {

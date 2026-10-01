@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { FiDownload } from "react-icons/fi";
 import { certifications, education, experiences, profile, skillGroups } from "@/content/portfolio";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Resume",
-  description: "Experience, education, certifications, and technical skills of Senior Software Engineer Nikoo Asadnejad.",
-  alternates: siteUrl ? { canonical: `${siteUrl}/resume/` } : undefined,
+  description: "Resume of Nikoo Asadnejad, a Senior Software Engineer, backend developer, and software consultant specializing in .NET, distributed systems, and software architecture.",
+  alternates: { canonical: absoluteUrl("/resume/") },
 };
 
 export default function ResumePage() {

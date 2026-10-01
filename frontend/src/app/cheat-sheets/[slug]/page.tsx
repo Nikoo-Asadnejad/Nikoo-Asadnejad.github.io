@@ -4,12 +4,11 @@ import { notFound } from "next/navigation";
 import { FiArrowLeft, FiArrowUpRight, FiLayers, FiTerminal } from "react-icons/fi";
 import { CheatSheetExplorer } from "@/components/CheatSheetExplorer";
 import { getCheatSheet, getCheatSheetSlugs } from "@/content/cheatSheets";
+import { absoluteUrl } from "@/lib/seo";
 
 type CheatSheetPageProps = {
   params: Promise<{ slug: string }>;
 };
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 
 export function generateStaticParams() {
   return getCheatSheetSlugs().map((slug) => ({ slug }));
@@ -25,7 +24,7 @@ export async function generateMetadata({ params }: CheatSheetPageProps): Promise
   return {
     title: sheet.title,
     description: sheet.description,
-    alternates: siteUrl ? { canonical: `${siteUrl}/cheat-sheets/${slug}/` } : undefined,
+    alternates: { canonical: absoluteUrl(`/cheat-sheets/${slug}/`) },
   };
 }
 

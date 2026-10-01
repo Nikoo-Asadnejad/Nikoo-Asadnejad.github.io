@@ -17,7 +17,7 @@ export default function HomePage() {
             <p className="availability"><span aria-hidden="true" /> Open to meaningful engineering opportunities</p>
             <p className="eyebrow">Hello, I&apos;m</p>
             <h1>Nikoo<br /><span>Asadnejad</span></h1>
-            <h2>Senior Software Engineer</h2>
+            <h2>Senior Software Engineer &amp; Backend Developer</h2>
             <p className="hero-summary">{profile.shortSummary}</p>
             <div className="button-row">
               <Link className="button" href="/projects/">Explore my work <FiArrowRight aria-hidden="true" /></Link>

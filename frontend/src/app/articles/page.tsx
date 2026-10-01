@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { ArticleSearch } from "@/components/ArticleSearch";
 import { articles } from "@/content/articles";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Articles",
-  description: "Articles by Nikoo Asadnejad about software architecture, .NET, distributed systems, cloud-native engineering, and AI.",
-  alternates: siteUrl ? { canonical: `${siteUrl}/articles/` } : undefined,
+  description: "Articles by software engineer and backend developer Nikoo Asadnejad about software architecture, .NET, distributed systems, cloud-native engineering, and AI.",
+  alternates: { canonical: absoluteUrl("/articles/") },
 };
 
 export default function ArticlesPage() {

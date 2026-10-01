@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/content/portfolio";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Selected distributed systems, observability tooling, automation, and AI engineering projects by Nikoo Asadnejad.",
-  alternates: siteUrl ? { canonical: `${siteUrl}/projects/` } : undefined,
+  description: "Selected backend development, distributed systems, observability, automation, and AI engineering projects by software engineer Nikoo Asadnejad.",
+  alternates: { canonical: absoluteUrl("/projects/") },
 };
 
 export default function ProjectsPage() {

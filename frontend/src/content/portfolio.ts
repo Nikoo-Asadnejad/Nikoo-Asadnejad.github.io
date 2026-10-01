@@ -26,7 +26,7 @@ export const profile = {
   portrait: "/assets/nikoo-asadnejad.jpeg",
   cv: "/assets/nikoo-asadnejad-cv.pdf",
   shortSummary:
-    "I design reliable, high-performance software with C#, .NET, distributed systems, and modern architecture practices. I care about ownership, clear engineering decisions, and products that create meaningful business value.",
+    "I am a Senior Software Engineer, backend developer, and software consultant designing reliable, high-performance software with C#, .NET, distributed systems, and modern architecture practices.",
   summary: [
     "Senior Software Engineer with five years of experience designing and developing scalable, high-performance applications using C#, .NET, and modern software architecture principles in Agile and Scrum environments.",
     "I build distributed and business-critical platforms with microservices, Domain-Driven Design, CQRS, gRPC, RabbitMQ, Redis, MongoDB, SQL Server, and REST APIs. My work also covers system design, performance optimization, observability, and software architecture.",

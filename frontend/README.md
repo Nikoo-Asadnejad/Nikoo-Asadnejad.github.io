@@ -26,7 +26,7 @@ npm run build
 
 The production build is written to `out/`.
 
-When the final domain is known, copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` before building. This adds correct canonical URLs without hard-coding an unconfirmed domain.
+The site defaults to `https://nikoo-asadnejad.github.io` for canonical URLs, the sitemap, and robots.txt. If you connect a custom domain, copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` before building.
 
 ## Hosting the static files
 
