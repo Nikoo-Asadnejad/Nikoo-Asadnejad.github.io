@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getCheatSheetSlugs } from "@/content/cheatSheets";
 import { absoluteUrl } from "@/lib/seo";
 
+export const dynamic = "force-static";
+
 const staticRoutes = ["/", "/projects/", "/resume/", "/articles/", "/cheat-sheets/", "/contact/"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
