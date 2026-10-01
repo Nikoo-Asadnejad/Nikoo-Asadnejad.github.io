@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { FiDownload } from "react-icons/fi";
 import { certifications, education, experiences, profile, skillGroups } from "@/content/portfolio";
 import { absoluteUrl } from "@/lib/seo";
@@ -71,22 +72,29 @@ export default function ResumePage() {
                 ))}
               </div>
             </section>
-
-            <section className="resume-section" aria-labelledby="certifications-title">
-              <div className="resume-section-heading"><span>03</span><h2 id="certifications-title">Licenses &amp; certifications</h2></div>
-              <div className="credential-timeline">
-                {certifications.map((item) => (
-                  <article className="credential-item" key={item.title}>
-                    <p className="card-meta">{item.issued} · {item.duration}</p>
-                    <h3>{item.title}</h3>
-                    <p className="company">{item.provider}</p>
-                    <p className="credential-topics">{item.topics}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
           </div>
         </div>
+        <section className="container resume-section resume-certifications" aria-labelledby="certifications-title">
+          <div className="resume-section-heading"><span>03</span><h2 id="certifications-title">Licenses &amp; certifications</h2></div>
+          <div className="credential-timeline">
+            {certifications.map((item) => (
+              <article className={`credential-item${item.preview ? " credential-entry" : ""}`} key={item.title}>
+                <div>
+                  <p className="card-meta">{item.issued}{item.duration && ` · ${item.duration}`}</p>
+                  <h3>{item.title}</h3>
+                  <p className="company">{item.provider}</p>
+                  <p className="credential-topics">{item.topics}</p>
+                </div>
+                {item.preview && item.document && (
+                  <a className="credential-preview" href={item.document} target="_blank" rel="noopener noreferrer" aria-label={`View ${item.title} certificate`}>
+                    <Image src={item.preview} alt={`${item.title} certificate`} width={220} height={156} sizes="220px" />
+                    <span>View certificate</span>
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
       </section>
     </>
   );

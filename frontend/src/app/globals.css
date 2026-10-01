@@ -299,6 +299,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .credential-item h3 { margin-bottom: .35rem; }
 .credential-item .company { margin-bottom: .45rem; }
 .credential-topics { max-width: 720px; margin-bottom: 0; color: var(--muted); }
+.resume-certifications { margin-top: clamp(4rem, 8vw, 7rem); }
+.credential-entry { display: grid; grid-template-columns: minmax(0, 1fr) 220px; align-items: center; gap: clamp(1.5rem, 5vw, 4rem); min-height: 190px; }
+.credential-preview { display: grid; gap: .55rem; width: 220px; color: var(--cyan); font-size: .78rem; font-weight: 800; text-align: center; }
+.credential-preview img { display: block; width: 100%; height: auto; aspect-ratio: 220 / 156; object-fit: contain; border: 1px solid var(--border); border-radius: 10px; background: #fff; transition: border-color .2s ease, transform .2s ease; }
+.credential-preview:hover img, .credential-preview:focus-visible img { border-color: var(--cyan); transform: translateY(-2px); }
 
 .contact-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
 .contact-details > p { color: var(--muted); }
@@ -366,6 +371,8 @@ a.detail-card:hover { border-color: var(--cyan); }
   .project-card:last-child:nth-child(odd) { grid-column: auto; }
   .article-card:last-child:nth-child(odd) { grid-column: auto; }
   .field-row { grid-template-columns: 1fr; }
+  .credential-entry { grid-template-columns: minmax(0, 1fr) 180px; }
+  .credential-preview { width: 180px; }
 }
 
 @media (max-width: 480px) {
@@ -378,6 +385,8 @@ a.detail-card:hover { border-color: var(--cyan); }
   .button-row .text-link { justify-content: center; }
   .technology-item { min-height: 104px; }
   .cheat-card { min-height: 360px; }
+  .credential-entry { grid-template-columns: 1fr; gap: 1.25rem; }
+  .credential-preview { width: min(220px, 100%); }
   .cheat-card-count { display: none; }
   .cheat-card-actions { align-items: flex-start; flex-direction: column; }
   .cheat-sidebar { padding: 1rem; }

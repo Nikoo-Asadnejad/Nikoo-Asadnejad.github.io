@@ -233,12 +233,23 @@ export const education = [
   },
 ];
 
-export const certifications = [
-  { title: "Docker and Kubernetes", provider: "CanDo", issued: "Feb 2025", duration: "60h", topics: "Docker, Docker Swarm, Kubernetes" },
-  { title: "LPIC-2", provider: "Arjang", issued: "Jul 2024", duration: "50h", topics: "Linux kernel, systemd, NGINX" },
-  { title: "LPIC-1", provider: "CanDo", issued: "Apr 2024", duration: "45h", topics: "Linux commands, Bash scripts" },
-  { title: "ASP.NET Core", provider: "Kahkeshan Noor", issued: "Nov 2021", duration: "140h", topics: ".NET Core, REST APIs" },
-  { title: "MCSA Web Applications", provider: "Kahkeshan Noor", issued: "Aug 2020", duration: "20h", topics: "C#, .NET, ASP.NET, MVC" },
+export type Certification = {
+  title: string;
+  provider: string;
+  issued: string;
+  duration?: string;
+  topics: string;
+  preview?: string;
+  document?: string;
+};
+
+export const certifications: Certification[] = [
+  { title: "AI for Developers Conference", provider: "Dubai World Trade Centre", issued: "Oct 2025", topics: "Certificate of attendance as a delegate at GITEX Global.", preview: "/assets/certificates/ai-for-developers-conference.jpeg", document: "/assets/certificates/ai-for-developers-conference.jpeg" },
+  { title: "Docker and Kubernetes", provider: "CanDo", issued: "Mar 2025", duration: "60h", topics: "Docker, Docker Swarm, Kubernetes", preview: "/assets/certificates/docker-kubernetes-preview.jpg", document: "/assets/certificates/docker-kubernetes.pdf" },
+  { title: "LPIC-2", provider: "Arjang", issued: "Jul 2024", duration: "50h", topics: "Linux kernel, systemd, NGINX", preview: "/assets/certificates/lpic-2.jpeg", document: "/assets/certificates/lpic-2.jpeg" },
+  { title: "LPIC-1", provider: "CanDo", issued: "Apr 2024", duration: "45h", topics: "Linux commands, Bash scripts", preview: "/assets/certificates/lpic-1-preview.jpg", document: "/assets/certificates/lpic-1.pdf" },
+  { title: "ASP.NET Core", provider: "Kahkeshan Noor", issued: "Nov 2021", duration: "15h", topics: ".NET Core, REST APIs", preview: "/assets/certificates/asp-net-core-preview.jpg", document: "/assets/certificates/asp-net-core.pdf" },
+  { title: "MCSA Web Applications", provider: "Kahkeshan Noor", issued: "Aug 2020", duration: "140h", topics: "C#, .NET, ASP.NET, MVC", preview: "/assets/certificates/mcsa-web-applications-preview.jpg", document: "/assets/certificates/mcsa-web-applications.pdf" },
   { title: "Web Design", provider: "Tehran Institute of Technology", issued: "Apr 2019", duration: "80h", topics: "HTML, CSS, JavaScript, jQuery" },
 ];
 
