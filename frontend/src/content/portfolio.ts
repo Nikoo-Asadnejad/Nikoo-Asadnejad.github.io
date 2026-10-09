@@ -55,6 +55,15 @@ export const technologyHighlights = [
 
 export const projects: Project[] = [
   {
+    slug: "devagent",
+    title: "DevAgent",
+    description:
+      "DevAgent turns a GitHub issue into a draft pull request. Built with Python, FastAPI, LangGraph, Pydantic, OpenHands, Docker, and Gitleaks, it clones the repository and creates an isolated sandbox for each task. OpenHands uses the Agent Client Protocol (ACP) to run a local coding agent—currently Codex—inside that sandbox. DevAgent then builds, tests, and scans the changes before opening a draft PR for review.",
+    technologies: ["Python", "FastAPI", "LangGraph", "Docker", "Codex"],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/DevAgent",
+    featured: true,
+  },
+  {
     slug: "notification-service",
     title: "NotificationService",
     description:
