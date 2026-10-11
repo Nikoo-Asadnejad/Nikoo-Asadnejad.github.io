@@ -1,7 +1,9 @@
 import { FiArrowUpRight, FiGithub } from "react-icons/fi";
 import type { Project } from "@/content/portfolio";
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, headingLevel = "h3" }: { project: Project; headingLevel?: "h2" | "h3" }) {
+  const Heading = headingLevel;
+
   return (
     <article className="project-card">
       <div className="project-topline">
@@ -9,7 +11,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.featured && <span className="featured-label">Featured</span>}
       </div>
       <div className="project-copy">
-        <h3>{project.title}</h3>
+        <Heading>{project.title}</Heading>
         <p>{project.description}</p>
       </div>
       <ul className="tag-list" aria-label={`${project.title} technologies`}>
@@ -23,4 +25,3 @@ export function ProjectCard({ project }: { project: Project }) {
     </article>
   );
 }
-

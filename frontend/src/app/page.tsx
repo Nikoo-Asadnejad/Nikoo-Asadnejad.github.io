@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="hero-copy">
             <p className="availability"><span aria-hidden="true" /> Open to meaningful engineering opportunities</p>
             <p className="eyebrow">Hello, I&apos;m</p>
-            <h1>Nikoo<br /><span>Asadnejad</span></h1>
+            <h1>Nikoo<br /> <span>Asadnejad</span></h1>
             <h2>Senior Software Engineer &amp; Backend Developer</h2>
             <p className="hero-summary">{profile.shortSummary}</p>
             <div className="button-row">
@@ -50,7 +50,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-heading split-heading">
             <div><p className="eyebrow">Technical toolkit</p><h2 id="skills-title">Technologies I work with</h2></div>
-            <p>Backend engineering, distributed systems, cloud-native delivery, and pragmatic AI experimentation.</p>
+            <p>Backend engineering and distributed systems are my core work. I also explore AI agents, LangGraph, LangChain, and RAG.</p>
           </div>
           <TechnologyGrid />
         </div>

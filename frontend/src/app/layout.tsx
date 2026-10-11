@@ -10,7 +10,7 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--font-body", display: 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Nikoo Asadnejad | Software Engineer & Backend Developer", template: "%s | Nikoo Asadnejad" },
+  title: { default: "Nikoo Asadnejad | Senior Software Engineer | .NET & AI", template: "%s | Nikoo Asadnejad" },
   description: seoDescription,
   keywords: seoKeywords,
   authors: [{ name: profile.name, url: absoluteUrl("/") }],
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: absoluteUrl("/"),
     siteName: "Nikoo Asadnejad",
-    title: "Nikoo Asadnejad | Software Engineer & Backend Developer",
+    title: "Nikoo Asadnejad | Senior Software Engineer | .NET & AI",
     description: seoDescription,
     images: [{ url: profile.portrait, width: 400, height: 400, alt: "Nikoo Asadnejad, Senior Software Engineer" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nikoo Asadnejad | Software Engineer & Backend Developer",
+    title: "Nikoo Asadnejad | Senior Software Engineer | .NET & AI",
     description: seoDescription,
     images: [profile.portrait],
   },
@@ -52,7 +52,9 @@ const structuredData = [
       "Software consulting",
       "C#",
       ".NET",
+      "ASP.NET Core",
       "Distributed systems",
+      "Microservices",
       "Software architecture",
       "Cloud-native platforms",
     ],
@@ -62,7 +64,7 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Nikoo Asadnejad | Software Engineer & Backend Developer",
+    name: "Nikoo Asadnejad",
     url: absoluteUrl("/"),
     description: seoDescription,
     inLanguage: "en",

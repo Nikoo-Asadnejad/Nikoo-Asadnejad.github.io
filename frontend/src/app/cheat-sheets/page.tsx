@@ -3,13 +3,13 @@ import Link from "next/link";
 import { FiArrowRight, FiArrowUpRight, FiBookOpen, FiTerminal } from "react-icons/fi";
 import { SiDocker, SiGit, SiKubernetes, SiLinux } from "react-icons/si";
 import { getCheatSheets } from "@/content/cheatSheets";
-import { absoluteUrl } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Developer Cheat Sheets",
-  description: "Readable Linux, Git, Kubernetes, and Docker command references by software engineer Nikoo Asadnejad.",
-  alternates: { canonical: absoluteUrl("/cheat-sheets/") },
-};
+export const metadata: Metadata = pageMetadata(
+  "Developer Cheat Sheets",
+  "Readable Linux, Git, Kubernetes, and Docker command references by software engineer Nikoo Asadnejad.",
+  "/cheat-sheets/",
+);
 
 const icons = {
   linux: SiLinux,
@@ -52,11 +52,11 @@ export default function CheatSheetsPage() {
                   </div>
                   <div className="cheat-card-copy">
                     <p className="eyebrow">{sheet.sections.length} topics</p>
-                    <h2>{sheet.shortTitle}</h2>
+                    <h3>{sheet.shortTitle}</h3>
                     <p>{sheet.description}</p>
                   </div>
                   <div className="cheat-card-actions">
-                    <Link href={`/cheat-sheets/${sheet.slug}/`}>Read cheat sheet <FiArrowRight aria-hidden="true" /></Link>
+                    <Link href={`/cheat-sheets/${sheet.slug}/`}>Read {sheet.shortTitle} cheat sheet <FiArrowRight aria-hidden="true" /></Link>
                     <a href={sheet.repositoryUrl} target="_blank" rel="noreferrer" aria-label={`View ${sheet.shortTitle} source repository`}>Source <FiArrowUpRight aria-hidden="true" /></a>
                   </div>
                 </article>

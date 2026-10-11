@@ -3,13 +3,13 @@ import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone } from "react-icons/fi"
 import { SiMedium } from "react-icons/si";
 import { ContactForm } from "@/components/ContactForm";
 import { profile } from "@/content/portfolio";
-import { absoluteUrl } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Contact Nikoo Asadnejad, a Senior Software Engineer, backend developer, and software consultant, about engineering roles, architecture work, or technical collaboration.",
-  alternates: { canonical: absoluteUrl("/contact/") },
-};
+export const metadata: Metadata = pageMetadata(
+  "Contact",
+  "Contact Nikoo Asadnejad, a Senior Software Engineer, backend developer, and software consultant, about engineering roles, architecture work, or technical collaboration.",
+  "/contact/",
+);
 
 const details = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}`, icon: FiMail },

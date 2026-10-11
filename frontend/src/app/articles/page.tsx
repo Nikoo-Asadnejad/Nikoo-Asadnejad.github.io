@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { ArticleSearch } from "@/components/ArticleSearch";
 import { articles } from "@/content/articles";
-import { absoluteUrl } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Articles",
-  description: "Articles by software engineer and backend developer Nikoo Asadnejad about software architecture, .NET, distributed systems, cloud-native engineering, and AI.",
-  alternates: { canonical: absoluteUrl("/articles/") },
-};
+export const metadata: Metadata = pageMetadata(
+  "Articles",
+  "Articles by software engineer and backend developer Nikoo Asadnejad about software architecture, .NET, distributed systems, cloud-native engineering, and AI.",
+  "/articles/",
+);
 
 export default function ArticlesPage() {
   return (

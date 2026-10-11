@@ -129,6 +129,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .project-index { display: grid; place-items: center; width: 54px; aspect-ratio: 1; border-radius: 15px; background: #19304e; color: var(--cyan); font: 900 1rem var(--font-display), sans-serif; }
 .featured-label { padding: .32rem .6rem; border-radius: 999px; background: rgba(237, 77, 169, .1); color: #ff8bc9; font-size: .72rem; font-weight: 800; }
 .project-copy { flex: 1; }
+.project-copy h2 { font-size: 1.45rem; margin-bottom: 1.45rem; }
 .project-copy p { color: var(--muted); }
 .tag-list { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; padding: 0; margin: 1.5rem 0; }
 .tag-list li { padding: .3rem .6rem; border: 1px solid var(--border); border-radius: 999px; color: #becae0; font-size: .72rem; font-weight: 700; }
@@ -194,7 +195,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .cheat-card-count { display: inline-flex; align-items: center; gap: .45rem; color: var(--muted); font-size: .78rem; font-weight: 800; }
 .cheat-card-copy { flex: 1; margin-top: 2.5rem; position: relative; z-index: 1; }
 .cheat-card-copy .eyebrow { color: var(--cheat-accent); }
-.cheat-card-copy h2 { margin-bottom: .75rem; font-size: clamp(2.35rem, 5vw, 3.7rem); }
+.cheat-card-copy h3 { margin-bottom: .75rem; font-size: clamp(2.35rem, 5vw, 3.7rem); }
 .cheat-card-copy > p:last-child { max-width: 590px; color: var(--muted); }
 .cheat-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.2rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
 .cheat-card-actions a { display: inline-flex; align-items: center; gap: .45rem; color: var(--cheat-accent); font-weight: 800; }

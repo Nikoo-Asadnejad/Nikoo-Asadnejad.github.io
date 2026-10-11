@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { FiArrowLeft, FiArrowUpRight, FiLayers, FiTerminal } from "react-icons/fi";
 import { CheatSheetExplorer } from "@/components/CheatSheetExplorer";
 import { getCheatSheet, getCheatSheetSlugs } from "@/content/cheatSheets";
-import { absoluteUrl } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 type CheatSheetPageProps = {
   params: Promise<{ slug: string }>;
@@ -21,11 +21,7 @@ export async function generateMetadata({ params }: CheatSheetPageProps): Promise
   const sheet = getCheatSheet(slug);
   if (!sheet) return {};
 
-  return {
-    title: sheet.title,
-    description: sheet.description,
-    alternates: { canonical: absoluteUrl(`/cheat-sheets/${slug}/`) },
-  };
+  return pageMetadata(sheet.title, sheet.description, `/cheat-sheets/${slug}/`);
 }
 
 export default async function CheatSheetPage({ params }: CheatSheetPageProps) {

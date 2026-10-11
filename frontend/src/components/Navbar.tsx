@@ -24,7 +24,7 @@ export function Navbar() {
       <nav className="nav-shell" aria-label="Primary navigation">
         <Link className="brand" href="/" aria-label="Nikoo Asadnejad home" onClick={() => setOpen(false)}>
           <span className="brand-avatar" aria-hidden="true">
-            <Image src={profile.portrait} alt="" width={44} height={44} priority />
+            <Image src={profile.portrait} alt="" width={44} height={44} />
           </span>
           <span>
             <strong>Nikoo Asadnejad</strong>

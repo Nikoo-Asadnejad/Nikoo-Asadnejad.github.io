@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { FiDownload } from "react-icons/fi";
 import { certifications, education, experiences, profile, skillGroups } from "@/content/portfolio";
-import { absoluteUrl } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Resume",
-  description: "Resume of Nikoo Asadnejad, a Senior Software Engineer, backend developer, and software consultant specializing in .NET, distributed systems, and software architecture.",
-  alternates: { canonical: absoluteUrl("/resume/") },
-};
+export const metadata: Metadata = pageMetadata(
+  "Resume",
+  "Resume of Nikoo Asadnejad, a Senior Software Engineer, backend developer, and software consultant specializing in .NET, distributed systems, and software architecture.",
+  "/resume/",
+);
 
 export default function ResumePage() {
   return (
@@ -32,7 +32,7 @@ export default function ResumePage() {
               {profile.summary.slice(1).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
             <section className="resume-panel sidebar-skills" aria-labelledby="sidebar-skills-title">
-              <p className="eyebrow" id="sidebar-skills-title">Technical skills</p>
+              <h2 className="eyebrow" id="sidebar-skills-title">Technical skills</h2>
               {skillGroups.map((group) => (
                 <div className="sidebar-skill-group" key={group.title}>
                   <h3>{group.title}</h3>

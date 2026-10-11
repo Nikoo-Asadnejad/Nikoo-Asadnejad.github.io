@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/content/portfolio";
-import { absoluteUrl } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Projects",
-  description: "Selected backend development, distributed systems, observability, automation, and AI engineering projects by software engineer Nikoo Asadnejad.",
-  alternates: { canonical: absoluteUrl("/projects/") },
-};
+export const metadata: Metadata = pageMetadata(
+  "Projects",
+  "Selected backend development, distributed systems, observability, automation, and AI engineering projects by software engineer Nikoo Asadnejad.",
+  "/projects/",
+);
 
 export default function ProjectsPage() {
   return (
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       </section>
       <section className="section page-content">
         <div className="container project-grid project-grid-full">
-          {projects.map((project) => <ProjectCard project={project} key={project.slug} />)}
+          {projects.map((project) => <ProjectCard project={project} headingLevel="h2" key={project.slug} />)}
         </div>
       </section>
     </>

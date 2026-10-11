@@ -10,7 +10,8 @@
     "build": "next build --webpack",
     "start": "npx serve@latest out",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:seo": "python3 scripts/check_seo.py"
   },
   "dependencies": {
     "next": "16.3.6",
