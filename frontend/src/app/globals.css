@@ -74,6 +74,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .availability span { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(51, 217, 155, .12); }
 .hero h1 { font-size: clamp(4.1rem, 8vw, 7.4rem); margin-bottom: 1rem; }
 .hero h1 span { color: transparent; -webkit-text-stroke: 1.5px #91a9c7; }
+.hero-native-name { width: fit-content; margin: -.3rem 0 1.2rem; color: var(--muted); font-size: 1.25rem; }
 .hero h2 { font-size: clamp(1.35rem, 2vw, 1.8rem); color: var(--cyan); letter-spacing: -.015em; }
 .hero-summary { max-width: 680px; margin: 1.5rem 0 2rem; color: var(--muted); font-size: 1.08rem; }
 .button-row { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; }

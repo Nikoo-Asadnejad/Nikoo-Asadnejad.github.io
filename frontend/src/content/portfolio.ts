@@ -16,6 +16,7 @@ export type Experience = {
 
 export const profile = {
   name: "Nikoo Asadnejad",
+  nameFa: "نیکو اسدنژاد",
   title: "Senior Software Engineer",
   email: "nikoo.asadnejad.work@gmail.com",
   phone: "0989101330730",

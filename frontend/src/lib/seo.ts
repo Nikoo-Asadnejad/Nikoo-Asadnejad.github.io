@@ -7,7 +7,7 @@ export function absoluteUrl(path = "/") {
 }
 
 export const seoDescription =
-  "Nikoo Asadnejad is a Senior Software Engineer specializing in C#/.NET, distributed systems, microservices, and AI engineering projects. Explore her work and experience.";
+  "Nikoo Asadnejad (نیکو اسدنژاد) is a Senior Software Engineer specializing in C#/.NET, distributed systems, microservices, and AI engineering projects. Explore her work and experience.";
 
 const socialImage = absoluteUrl("/assets/nikoo-asadnejad.jpeg");
 
