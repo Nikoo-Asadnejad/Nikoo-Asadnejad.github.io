@@ -105,7 +105,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .technology-grid { --technology-gap: .9rem; display: grid; gap: var(--technology-gap); overflow: hidden; }
 .technology-marquee { overflow: hidden; }
 .technology-track { display: flex; width: max-content; gap: var(--technology-gap); will-change: transform; }
-.technology-set { width: min(calc(100vw - 2rem), var(--container)); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); flex: 0 0 auto; gap: var(--technology-gap); }
+.technology-set { width: min(calc(100vw - 2rem), var(--container)); display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); flex: 0 0 auto; gap: var(--technology-gap); }
 .technology-row-left .technology-track { animation: skill-marquee-left 20s linear infinite; }
 .technology-row-right .technology-track { animation: skill-marquee-right 20s linear infinite; }
 .technology-grid:hover .technology-track { animation-play-state: paused; }

@@ -39,8 +39,9 @@ const icons: Record<(typeof technologyHighlights)[number]["icon"], IconType> = {
 };
 
 export function TechnologyGrid() {
-  const rows = Array.from({ length: Math.ceil(technologyHighlights.length / 5) }, (_, rowIndex) =>
-    technologyHighlights.slice(rowIndex * 5, rowIndex * 5 + 5),
+  const itemsPerRow = Math.ceil(technologyHighlights.length / 3);
+  const rows = Array.from({ length: 3 }, (_, rowIndex) =>
+    technologyHighlights.slice(rowIndex * itemsPerRow, (rowIndex + 1) * itemsPerRow),
   );
 
   return (
