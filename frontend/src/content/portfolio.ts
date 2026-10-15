@@ -27,11 +27,11 @@ export const profile = {
   portrait: "/assets/nikoo-asadnejad.jpeg",
   cv: "/assets/nikoo-asadnejad-cv.pdf",
   shortSummary:
-    "I am a Senior Software Engineer, backend developer, and software consultant designing reliable, high-performance software with C#, .NET, distributed systems, and modern architecture practices.",
+    "I am a Senior Software Engineer, backend developer, and software consultant designing reliable, high-performance software with C#, .NET, distributed systems, and modern architecture practices. I am also familiar with Agentic AI, RAG, LangChain, and LangGraph.",
   summary: [
     "Senior Software Engineer with five years of experience designing and developing scalable, high-performance applications using C#, .NET, and modern software architecture principles in Agile and Scrum environments.",
     "I build distributed and business-critical platforms with microservices, Domain-Driven Design, CQRS, gRPC, RabbitMQ, Redis, MongoDB, SQL Server, and REST APIs. My work also covers system design, performance optimization, observability, and software architecture.",
-    "Alongside the Microsoft ecosystem, I use foundational Python and Go knowledge for cloud-native and AI-related projects. I am especially interested in AI engineering, agentic systems, Kubernetes, observability, and intelligent automation.",
+    "Alongside the Microsoft ecosystem, I use foundational Python and Go knowledge for cloud-native and AI-related projects. I am familiar with Agentic AI, Retrieval-Augmented Generation (RAG), LangChain, and LangGraph. I am especially interested in AI engineering, agentic systems, Kubernetes, observability, and intelligent automation.",
     "I am currently pursuing a Master's degree in Software Engineering, researching AI-driven autoscaling for Kubernetes and cloud-native environments.",
   ],
 };
@@ -268,5 +268,6 @@ export const skillGroups = [
   { title: "Backend", skills: ["C#", ".NET", "ASP.NET Core", "REST APIs", "gRPC", "SignalR", "GraphQL", "MVC", "WCF", "Entity Framework"] },
   { title: "Data & Messaging", skills: ["SQL Server", "MongoDB", "Redis", "Elasticsearch", "RabbitMQ"] },
   { title: "Platform & Quality", skills: ["Git", "CI/CD", "Docker", "Kubernetes", "Linux", "xUnit", "TDD", "Observability", "OpenTelemetry" , "ELK"] },
+  { title: "AI Engineering", skills: ["Agentic AI", "RAG", "LangChain", "LangGraph"] },
   { title: "Additional", skills: ["Python", "Go", "Bash", "HTML", "CSS", "JavaScript", "jQuery"] },
 ];
