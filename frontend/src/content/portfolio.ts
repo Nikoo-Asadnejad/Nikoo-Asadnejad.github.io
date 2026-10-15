@@ -270,6 +270,6 @@ export const skillGroups = [
   { title: "Backend", skills: ["C#", ".NET", "ASP.NET Core", "REST APIs", "gRPC", "SignalR", "GraphQL", "MVC", "WCF", "Entity Framework"] },
   { title: "Data & Messaging", skills: ["SQL Server", "MongoDB", "Redis", "Elasticsearch", "RabbitMQ"] },
   { title: "Platform & Quality", skills: ["Git", "CI/CD", "Docker", "Kubernetes", "Linux", "xUnit", "TDD", "Observability", "OpenTelemetry" , "ELK"] },
-  { title: "AI Engineering", skills: ["Agentic AI", "RAG", "LangChain", "LangGraph"] },
+  { title: "AI Engineering", skills: ["Agentic AI", "RAG", "LangChain", "LangGraph", "MCPs"] },
   { title: "Additional", skills: ["Python", "Go", "Bash", "HTML", "CSS", "JavaScript", "jQuery"] },
 ];
