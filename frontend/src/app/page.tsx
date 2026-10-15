@@ -17,7 +17,6 @@ export default function HomePage() {
             <p className="availability"><span aria-hidden="true" /> Open to meaningful engineering opportunities</p>
             <p className="eyebrow">Hello, I&apos;m</p>
             <h1>Nikoo<br /> <span>Asadnejad</span></h1>
-            <p className="hero-native-name" lang="fa" dir="rtl">{profile.nameFa}</p>
             <h2>Senior Software Engineer &amp; Backend Developer</h2>
             <p className="hero-summary">{profile.shortSummary}</p>
             <div className="button-row">
