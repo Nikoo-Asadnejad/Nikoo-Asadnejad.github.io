@@ -7,6 +7,8 @@ import {
   SiGo,
   SiJavascript,
   SiKubernetes,
+  SiLangchain,
+  SiLanggraph,
   SiLinux,
   SiMongodb,
   SiPython,
@@ -32,10 +34,12 @@ const icons: Record<(typeof technologyHighlights)[number]["icon"], IconType> = {
   git: SiGit,
   javascript: SiJavascript,
   linux: SiLinux,
+  langchain: SiLangchain,
+  langgraph: SiLanggraph,
 };
 
 export function TechnologyGrid() {
-  const rows = Array.from({ length: 3 }, (_, rowIndex) =>
+  const rows = Array.from({ length: Math.ceil(technologyHighlights.length / 5) }, (_, rowIndex) =>
     technologyHighlights.slice(rowIndex * 5, rowIndex * 5 + 5),
   );
 

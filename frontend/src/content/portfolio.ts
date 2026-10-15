@@ -52,6 +52,8 @@ export const technologyHighlights = [
   { name: "Git", icon: "git" },
   { name: "JavaScript", icon: "javascript" },
   { name: "Linux", icon: "linux" },
+  { name: "LangChain", icon: "langchain" },
+  { name: "LangGraph", icon: "langgraph" },
 ] as const;
 
 export const projects: Project[] = [
