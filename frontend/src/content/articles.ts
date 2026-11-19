@@ -8,6 +8,14 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    title: "Your RAG Found the Right Topic. Did It Find the Right Answer?",
+    abstract:
+      "How bi-encoders, cross-encoders, and reranking help RAG pipelines select passages that answer the question, with practical guidance on evaluation and tradeoffs.",
+    published: "Nov 19, 2026",
+    url: "https://medium.com/@nikoo.asadnejad.work/your-rag-found-the-right-topic-did-it-find-the-right-answer-f97cb97622ca",
+    featured: true,
+  },
+  {
     title: "Understanding LangChain: From Workflows to Intelligent Agents",
     abstract:
       "A practical introduction to AI agents, ReAct, tool calling, and guardrails—and how they let LangChain applications make decisions beyond predefined workflows.",
@@ -69,7 +77,7 @@ export const articles: Article[] = [
       "A tour of modern retrieval systems covering embeddings, dense and sparse vectors, hybrid search, similarity metrics, vector databases, and the RAG pipeline.",
     published: "Jun 4, 2026",
     url: "https://medium.com/@nikoo.asadnejad.work/inside-modern-ai-search-rag-embeddings-vector-databases-and-similarity-algorithms-b282342e0286",
-    featured: true,
+    featured: false,
   },
   {
     title: "OWASP Top 10 (2026): The Most Critical Web Application Security Risks Every Developer Should Understand",
