@@ -3,6 +3,7 @@ export type Project = {
   title: string;
   description: string;
   technologies: string[];
+  featuredTechnologies?: string[];
   repositoryUrl: string;
   featured: boolean;
 };
@@ -61,11 +62,12 @@ export const projects: Project[] = [
     slug: "security-knowledge-assistant",
     title: "Security Knowledge Assistant",
     description:
-      "A local RAG project for exploring OWASP LLM security documentation. Built with Python and FastAPI, it combines Markdown-aware parent–child chunking, PostgreSQL parent storage, and dense + BM25 hybrid search in Qdrant, with reciprocal rank fusion and cross-encoder reranking.",
+      "Local RAG search over OWASP security documentation, combining parent–child chunking, hybrid retrieval, and cross-encoder reranking.",
     technologies: [
       "Python", "FastAPI", "RAG", "Qdrant", "PostgreSQL", "BM25",
       "Bi-encoder", "Cross-encoder", "Reranking", "RAG Pipeline", "Dense Vectors", "Sparse Vectors",
     ],
+    featuredTechnologies: ["Python", "RAG Pipeline", "Reranking", "BM25", "Cross-encoder"],
     repositoryUrl: "https://github.com/Nikoo-Asadnejad/Security-Knowledge-Assistant",
     featured: true,
   },
@@ -73,7 +75,7 @@ export const projects: Project[] = [
     slug: "devagent",
     title: "DevAgent",
     description:
-      "DevAgent turns a GitHub issue into a draft pull request. Built with Python, FastAPI, LangGraph, Pydantic, OpenHands, Docker, and Gitleaks, it clones the repository and creates an isolated sandbox for each task. OpenHands uses the Agent Client Protocol (ACP) to run a local coding agent—currently Codex—inside that sandbox. DevAgent then builds, tests, and scans the changes before opening a draft PR for review.",
+      "Turns GitHub issues into draft pull requests using a coding agent in Docker, with build, test, and security checks before review.",
     technologies: ["Python", "FastAPI", "LangGraph", "OpenHands", "ACP", "Docker", "Codex"],
     repositoryUrl: "https://github.com/Nikoo-Asadnejad/DevAgent",
     featured: true,
@@ -82,27 +84,36 @@ export const projects: Project[] = [
     slug: "notification-service",
     title: "NotificationService",
     description:
-      "A microservice-based notification platform using asynchronous RabbitMQ communication. A central API dispatches requests to dedicated Email, SMS, and Push Notification services for scalable, reliable, and decoupled delivery.",
+      "A notification platform that routes email, SMS, and push requests to dedicated microservices through asynchronous RabbitMQ messaging.",
     technologies: ["C#", ".NET", "RabbitMQ", "Microservices"],
     repositoryUrl: "https://github.com/Nikoo-Asadnejad/NotificationService",
+    featured: true,
+  },
+  {
+    slug: "manufacturing-system",
+    title: "ManufacturingSystem",
+    description:
+      "A .NET 10 worker that runs sensor-driven manufacturing workflows, evaluates rules, and coordinates shared machine resources.",
+    technologies: ["C#", ".NET 10", "Concurrency", "Dataflow"],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/ManufacturingSystem",
+    featured: true,
+  },
+  {
+    slug: "observability",
+    title: "Observability",
+    description:
+      "A lightweight, extensible C# library that adds health checks, metrics, tracing, and logging to .NET applications with minimal setup.",
+    technologies: ["C#", ".NET", "OpenTelemetry", "Observability"],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/Observability",
     featured: true,
   },
   {
     slug: "linkedin-post-creator-agent",
     title: "LinkedIn Post Creator Agent",
     description:
-      "A multi-agent AI system built with Python, LangChain, and Ollama that researches topics and produces ready-to-publish LinkedIn posts with accompanying images through asynchronous parallel workflows.",
+      "A multi-agent system that researches topics and creates LinkedIn posts with images using Python, LangChain, and Ollama.",
     technologies: ["Python", "LangChain", "Ollama", "Agentic AI"],
     repositoryUrl: "https://github.com/Nikoo-Asadnejad/post_creator_agent",
-    featured: true,
-  },
-  {
-    slug: "kibana-dashboard-generator",
-    title: "Kibana Dashboard Generator",
-    description:
-      "An automated solution that reads Swagger/OpenAPI specifications and generates dedicated Kibana dashboards with endpoint-level HTTP status and operational metrics.",
-    technologies: ["Python", "Kibana", "OpenAPI", "Observability"],
-    repositoryUrl: "https://github.com/Nikoo-Asadnejad/kibana_dashboard_generator",
     featured: true,
   },
   {
@@ -115,6 +126,24 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "kibana-dashboard-generator",
+    title: "Kibana Dashboard Generator",
+    description:
+      "An automated solution that reads Swagger/OpenAPI specifications and generates dedicated Kibana dashboards with endpoint-level HTTP status and operational metrics.",
+    technologies: ["Python", "Kibana", "OpenAPI", "Observability"],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/kibana_dashboard_generator",
+    featured: true,
+  },
+  {
+    slug: "shopping-mcp",
+    title: "Shopping MCP",
+    description:
+      "Read-only MCP tools for product search, comparisons, and buyer-review summaries across Iranian online stores.",
+    technologies: ["Python", "MCP", "FastMCP", "FastAPI", "Pydantic", "HTTPX"],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/Shopping-MCP",
+    featured: true,
+  },
+  {
     slug: "code-reviewer",
     title: "CodeReviewer",
     description:
@@ -122,24 +151,6 @@ export const projects: Project[] = [
     technologies: ["C#", ".NET", "AI", "Code Review"],
     repositoryUrl: "https://github.com/Nikoo-Asadnejad/CodeReviewer",
     featured: false,
-  },
-  {
-    slug: "observability",
-    title: "Observability",
-    description:
-      "A lightweight, extensible C# library that adds health checks, metrics, tracing, and logging to .NET applications with minimal setup.",
-    technologies: ["C#", ".NET", "OpenTelemetry", "Observability"],
-    repositoryUrl: "https://github.com/Nikoo-Asadnejad/Observability",
-    featured: true,
-  },
-  {
-    slug: "manufacturing-system",
-    title: "ManufacturingSystem",
-    description:
-      "A .NET 10 worker that models a manufacturing workflow driven by temperature and pressure measurements. It captures immutable sensor snapshots, evaluates workflow rules, and coordinates shared machine resources across eligible stages.",
-    technologies: ["C#", ".NET 10", "Concurrency", "Dataflow"],
-    repositoryUrl: "https://github.com/Nikoo-Asadnejad/ManufacturingSystem",
-    featured: true,
   },
   {
     slug: "graceful-shutdown",

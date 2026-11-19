@@ -1,8 +1,12 @@
 import { FiArrowUpRight, FiGithub } from "react-icons/fi";
 import type { Project } from "@/content/portfolio";
+import { ProjectTechnologies } from "@/components/ProjectTechnologies";
 
-export function ProjectCard({ project, headingLevel = "h3" }: { project: Project; headingLevel?: "h2" | "h3" }) {
+export function ProjectCard({ project, headingLevel = "h3", technologyLimit }: { project: Project; headingLevel?: "h2" | "h3"; technologyLimit?: number }) {
   const Heading = headingLevel;
+  const previewTechnologies = technologyLimit === undefined
+    ? undefined
+    : project.featuredTechnologies ?? project.technologies.slice(0, technologyLimit);
 
   return (
     <article className="project-card">
@@ -14,9 +18,12 @@ export function ProjectCard({ project, headingLevel = "h3" }: { project: Project
         <Heading>{project.title}</Heading>
         <p>{project.description}</p>
       </div>
-      <ul className="tag-list" aria-label={`${project.title} technologies`}>
-        {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
-      </ul>
+      <ProjectTechnologies
+        id={`${project.slug}-technologies`}
+        label={`${project.title} technologies`}
+        technologies={project.technologies}
+        previewTechnologies={previewTechnologies}
+      />
       <a className="project-link" href={project.repositoryUrl} target="_blank" rel="noreferrer" aria-label={`View ${project.title} repository on GitHub`}>
         <FiGithub aria-hidden="true" />
         View repository

@@ -62,8 +62,8 @@ export default function HomePage() {
             <div><p className="eyebrow">Selected work</p><h2 id="featured-projects-title">Systems built to solve real problems</h2></div>
             <Link className="text-link" href="/projects/">View all projects <FiArrowRight aria-hidden="true" /></Link>
           </div>
-          <div className="project-grid">
-            {projects.filter((project) => project.featured).map((project) => <ProjectCard project={project} key={project.slug} />)}
+          <div className="project-grid featured-project-grid">
+            {projects.filter((project) => project.featured).map((project) => <ProjectCard project={project} technologyLimit={4} key={project.slug} />)}
           </div>
         </div>
       </section>
