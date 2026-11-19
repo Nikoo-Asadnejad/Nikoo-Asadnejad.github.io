@@ -58,6 +58,18 @@ export const technologyHighlights = [
 
 export const projects: Project[] = [
   {
+    slug: "security-knowledge-assistant",
+    title: "Security Knowledge Assistant",
+    description:
+      "A local RAG project for exploring OWASP LLM security documentation. Built with Python and FastAPI, it combines Markdown-aware parent–child chunking, PostgreSQL parent storage, and dense + BM25 hybrid search in Qdrant, with reciprocal rank fusion and cross-encoder reranking.",
+    technologies: [
+      "Python", "FastAPI", "RAG", "Qdrant", "PostgreSQL", "BM25",
+      "Bi-encoder", "Cross-encoder", "Reranking", "RAG Pipeline", "Dense Vectors", "Sparse Vectors",
+    ],
+    repositoryUrl: "https://github.com/Nikoo-Asadnejad/Security-Knowledge-Assistant",
+    featured: true,
+  },
+  {
     slug: "devagent",
     title: "DevAgent",
     description:
